@@ -12,11 +12,12 @@ public class UsuarioOperations {
     }
 
     public void inserirUsuarios() {
-        Usuario alice = new Usuario("Alice", 25);
+        //Usuario alice = new Usuario("Alice", 25);
+        usuarios.insertOne(new Usuario("Alice", 25).toDocument());
         Usuario bob = new Usuario("Bob", 30);
         Usuario charlie = new Usuario("Charlie", 35);
 
-        usuarios.insertMany(java.util.Arrays.asList(alice.toDocument(), bob.toDocument(), charlie.toDocument()));
+        usuarios.insertMany(java.util.Arrays.asList(bob.toDocument(), charlie.toDocument()));
         System.out.println("Usuários inseridos.");
     }
 
